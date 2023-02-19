@@ -8,6 +8,7 @@ import Home from './panels/Home';
 import Persik from './panels/Persik';
 import Organization from './panels/Organization';
 import School from './panels/School';
+import Second from './panels/Second';
 const simpleContractAddress = "0xbfff289e6099859c0d0f080ae95aa9045b6afff1";
 
 
@@ -31,7 +32,6 @@ const App = () => {
 	const go = e => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
-
 
 	
 	const reg = async e => {
@@ -78,6 +78,7 @@ const App = () => {
 								<Persik id='persik' go={go} />
 								<Organization id='organization' go={go} />
 								<School id='school' go={go} />
+								<Second id='second' go={go} />
 							</View>
 						</SplitCol>
 					</SplitLayout>

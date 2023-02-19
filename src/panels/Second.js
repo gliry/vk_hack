@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Home.css';
+import './Second.css';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 
-const Home = ({ id, go, reg, transaction, fetchedUser }) => (
+const Second = ({ id, go, reg, transaction, fetchedUser }) => (
 	<Panel id={id}>
 		<PanelHeader>Аттестат</PanelHeader>
 		{fetchedUser &&
@@ -18,16 +18,27 @@ const Home = ({ id, go, reg, transaction, fetchedUser }) => (
 		</Group>}
 
 		<Group header={<Header className="Title" level="1" mode="secondary">
+			Добро пожаловать, выберите соответствующий раздел
 		</Header>}>
 			<Div>
-
-				<Button stretched size="l" mode="secondary" onClick={reg}
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="organization" 
 						className="Button">
-					Войти через metamask
+					Организация
 				</Button>
-				<Button stretched size="l" mode="secondary" onClick={go} data-to="second"
+
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="school"
 						className="Button">
-					Далее
+					Школа
+				</Button>
+
+				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik"
+						className="Button">
+					Студент
+				</Button>
+
+				<Button stretched size="l" mode="secondary" onClick={transaction}
+						className="Button">
+					Транзакция
 				</Button>
 
 			</Div>
@@ -35,7 +46,7 @@ const Home = ({ id, go, reg, transaction, fetchedUser }) => (
 	</Panel>
 );
 
-Home.propTypes = {
+Second.propTypes = {
 	id: PropTypes.string.isRequired,
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
@@ -48,4 +59,4 @@ Home.propTypes = {
 	}),
 };
 
-export default Home;
+export default Second;
